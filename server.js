@@ -20,7 +20,7 @@ app.post('/users', async (req, res) => {
             }
         })
 
-        if (existingEmail) throw new Error("There is a user using this email")
+        if (existingEmail) throw new Error("There is already a user using this email")
 
         await prisma.user.create({
             data: {
